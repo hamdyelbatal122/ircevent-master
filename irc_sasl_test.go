@@ -34,3 +34,11 @@ func TestConnectionSASL(t *testing.T) {
 		time.Sleep(2 * time.Second)
 		irccon.Quit()
 
+	})
+
+	err := irccon.Connect(SASLServer)
+	if err != nil {
+		t.Fatalf("SASL failed: %s", err)
+	}
+	irccon.Loop()
+}
