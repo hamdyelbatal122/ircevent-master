@@ -1,4 +1,4 @@
-
+package irc
 import (
 	"crypto/tls"
 	"math/rand"
