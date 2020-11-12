@@ -14,22 +14,7 @@ import (
 // IRC/CTCP commands and error/response codes. To register a callback for all
 // events pass "*" as the event code. This function returns the ID of the
 // registered callback for later management.
-func (irc *Connection) AddCallback(eventcode string, callback func(*Event)) int {
-	eventcode = strings.ToUpper(eventcode)
-	id := 0
 
-	irc.eventsMutex.Lock()
-	_, ok := irc.events[eventcode]
-	if !ok {
-		irc.events[eventcode] = make(map[int]func(*Event))
-		id = 0
-	} else {
-		id = len(irc.events[eventcode])
-	}
-	irc.events[eventcode][id] = callback
-	irc.eventsMutex.Unlock()
-	return id
-}
 
 // Remove callback i (ID) from the given event code. This functions returns
 // true upon success, false if any error occurs.
