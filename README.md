@@ -77,4 +77,4 @@ Commands
 	ircobj.Privmsgf(<nickname | #channel>, "<formatstring>", ...)
 	ircobj.Notice("<nickname | #channel>", "msg")
 	ircobj.Noticef("<nickname | #channel>", "<formatstring>", ...)
-	.
+	
