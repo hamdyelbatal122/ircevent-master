@@ -1,8 +1,6 @@
 Description
 -----------
-
 Event based irc client library.
-
 
 Features
 --------
